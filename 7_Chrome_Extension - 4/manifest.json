@@ -5,9 +5,5 @@
     "browser_action": {
         "default_icon": "./assets/Extension_Logo_16.png",
         "default_popup": "./index.html"
-    },
-    "permissions": [
-        "activeTab",
-        "tabs"
-    ]
+    }
 }
