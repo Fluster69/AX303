@@ -4,5 +4,12 @@ body{
     align-items: center;
     flex-direction: column;
     width: 200px;
-    height: 80px;
+    height: 200px;
+}
+
+button{
+    margin-bottom: 10px;
+    width: 100px;
+    border-radius: 30%;
+    background-color: paleturquoise;
 }
