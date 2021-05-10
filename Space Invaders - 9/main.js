@@ -30,7 +30,17 @@ $(document).ready(function(){
 
   function main(){
     // Repeatedly loop and update the game & draw the result on the screen
+    let loop = function(){
+      update();
+      draw();
 
+      if(!gameOver){
+        window.requestAnimationFrame(loop. screen.canvas);
+      }
+      else{
+        gameOver(screen, win);
+      }
+    };
   }
 
   /*
@@ -44,35 +54,26 @@ $(document).ready(function(){
   */
 
   function init(){
-    // Creating screen - only if it is not there yet
+    if(screen == null){
+      screen = new Screen(504,600);
+    }
 
-
-    // Calculating screen's update using variables for frames
-
-
-    // Assigning image source
-
+    gameOver = false;
+    win = false;
+    frames = 0;
+    motion = 0;
+    levelFrame = 60;
+    alien_direction = 1;
+    invaders_image = new Image();
+    invaders_image_src = "./assets/invaders.png";
 
     // On image load, split the spritesheet into different sprites we want
     $(invaders_image).on("load", function(){
-      // Setting up the sprites
-      // Parameters for Sprite => (image's src, top left corner x, y, width, height)
-      
-
-      // Create tank object
-      
-
-      // Create city objects
-
-
-      // Create bullets array
-      
-
-      // Create alien objects
-      
-
-      // Calling the main function when the picture is ready after load
-      
+      alienSprite = [
+        [new Sprite(),new Sprite()],
+        [new Sprite(),new Sprite()],
+        [new Sprite(),new Sprite()]
+      ];
     });
   }
 
